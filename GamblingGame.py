@@ -30,7 +30,7 @@ print("You have currently", Pl.Health, "life")
 
 while Pl.Health > Pl.MinHealth:
     question = input("Would you like to play? (Yes/No) ").lower()  # input is case-insensitive
-    
+
     if question == "yes":
         Dmg_or_Health = random.randint(1, 50)
         Chances = random.randint(1, 2)
