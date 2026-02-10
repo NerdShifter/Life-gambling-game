@@ -6,6 +6,10 @@ score_multiplier = 1
 Cash = 0
 
 
+def Wait():
+    input("Press enter to continue.")
+
+
 class Player:
     def __init__(self, name):
         self.name = name
@@ -51,23 +55,28 @@ while pl.health > pl.min_health:
         dmg_or_health = random.randint(1, 50)
         chances = random.randint(1, 2)
         print("Deciding your fate...")
+        score_added = 10 * score_multiplier
         score += 10 * score_multiplier
         score_multiplier *= 1.1
+        print("+", score_added, "Points")
 
         if chances == 1:
             pl.take_dmg(dmg_or_health)
         else:
             pl.regen_health(dmg_or_health)
 
+        Wait()
+
     elif question == "2":
         print("Shop is not implemented yet.")
 
     elif question == "3":
-        print("Travelling isn't implemented yet' .")
-        
+        print("Travelling isn't implemented yet.")
+
     elif question == "4":
-    	print("Current Health:", pl.health)
-    	print("MaxHealth:", pl.max_health)
+        print("Current Health:", pl.health)
+        print("MaxHealth:", pl.max_health)
+        Wait()
 
     elif question == "5":
         break
