@@ -16,7 +16,7 @@ class Player:
             self.Health = self.MinHealth
         print("You took", amount, "damage! Current health:", self.Health)
         if self.Health == self.MinHealth:
-            print("You lost!")
+            print("Game ended.")
 
     def regen_Health(self, amount):
         self.Health += amount
@@ -29,7 +29,9 @@ print("Hello,", Pl.name)
 print("You have currently", Pl.Health, "life")
 
 while Pl.Health > Pl.MinHealth:
-    question = input("Would you like to play? (Yes/No) ").lower()  # input is case-insensitive
+    print("Current Score:",Score)
+    print("-"*32)
+    question = input("Would you like to play? (Yes/No) ").lower()
 
     if question == "yes":
         Dmg_or_Health = random.randint(1, 50)
